@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Details - EliteSync</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #a8dadc, #457b9d);
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .logo span {
+      color: #0056b3;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a.btn {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    nav a:hover,
+    nav a.btn:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+
+    h2 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .apply-btn:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Elite<span>Sync</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse Tasks</a></li>
+        <li><a href="post.html">Post a Task</a></li>
+        <li><a href="my-tasks.html">My Tasks</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="btn">Login</a></li>
+        <li><a href="signup.html" class="btn">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2 id="task-title">Loading Task...</h2>
+    <p><strong>Description:</strong> <span id="task-desc">Please wait...</span></p>
+    <p><strong>Category:</strong> <span id="task-category">---</span></p>
+    <p><strong>Budget:</strong> ₹<span id="task-budget">---</span></p>
+    <p><strong>Location:</strong> <span id="task-location">---</span></p>
+    <p><strong>Date:</strong> <span id="task-date">---</span></p>
+
+    <a href="#" class="apply-btn" onclick="applyNow()">Apply Now</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 EliteSync. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simulating data fetch from backend or query param
+    const task = {
+      title: "Website Development",
+      description: "Need a simple responsive website for my local business. Prefer HTML, CSS, and JS stack.",
+      category: "Web Development",
+      budget: "3000",
+      location: "Visakhapatnam",
+      date: "2024-05-01"
+    };
+
+    // Populate data into page
+    document.getElementById("task-title").textContent = task.title;
+    document.getElementById("task-desc").textContent = task.description;
+    document.getElementById("task-category").textContent = task.category;
+    document.getElementById("task-budget").textContent = task.budget;
+    document.getElementById("task-location").textContent = task.location;
+    document.getElementById("task-date").textContent = task.date;
+
+    function applyNow() {
+      alert("Application submitted successfully!");
+      // Later: send POST to /applications with user ID and task ID
+    }
+  </script>
+</body>
+</html>
